@@ -5,6 +5,8 @@ import com.chinwe.basic.demos.Sun;
 import com.chinwe.basic.utils.MethodTool;
 
 
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
@@ -12,15 +14,21 @@ import java.lang.reflect.Modifier;
 public class Demo1 {
 
     public static void main(String[] args) {
+        showClassProperties();
 
+
+    }
+
+    private static void showClassProperties() {
         Class fatherClass = Father.class;
         println(fatherClass.getPackage());
 
         Package myPackage = fatherClass.getPackage();
-
-
-
-
+        Class[] interfaces = fatherClass.getInterfaces();
+        Constructor[] constructors = fatherClass.getConstructors();
+        Method[] method = fatherClass.getMethods();
+        Field[] fields = fatherClass.getFields();
+        Annotation[] annotations = fatherClass.getAnnotations();
     }
 
     private static void demo3() {
